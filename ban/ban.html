@@ -1,1 +1,35 @@
-#pre
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>番付予想</title>
+  <link rel="stylesheet" href="./ban.css">
+</head>
+<body>
+
+<h2>番付予想</h2>
+
+<div class="date-input">
+  <label>今日の日付:</label>
+  <input type="date" id="todayInput">
+</div>
+
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>番付1</th>
+        <th>番付2</th>
+        <th>番付3</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+  </table>
+</div>
+
+<script src="./ban.js"></script>
+
+</body>
+</html>

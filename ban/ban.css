@@ -1,0 +1,39 @@
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+h2 {
+  margin-bottom: 10px;
+}
+
+.date-input {
+  margin-bottom: 15px;
+}
+
+.table-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  table-layout: fixed; /* 均等幅 */
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: center;
+  width: 20%; /* 5列均等 */
+}
+
+th {
+  background-color: #eee;
+}
+
+/* 宴会行 */
+.highlight {
+  background-color: #e6ffe6; /* 薄緑 */
+}
