@@ -1,7 +1,6 @@
 html, body {
   margin: 0;
   padding: 0;
-  overflow: hidden;
 }
 
 body {
@@ -113,6 +112,21 @@ body {
   box-shadow: 0 5px 15px rgba(0,0,0,0.5);
 }
 
+/* ===== 注釈 ===== */
+.note {
+  color: white;
+  font-size: 30px;
+
+  padding: 8px 12px;
+  line-height: 1.5;
+
+  /* ✅ 下に自然に配置 */
+  margin-top: 6px;
+
+  /* ✅ 画面下に少し余白 */
+  padding-bottom: 10px;
+}
+
 /* PC */
 @media (min-width: 1200px) {
   #board {
@@ -129,4 +143,12 @@ body {
   .cell {
     font-size: 30px;
   }
+
+  .note {
+    font-size: 15px;
+  }
+
 }
+
+
+
