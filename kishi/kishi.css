@@ -1,0 +1,132 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  background: black;
+  font-family: sans-serif;
+  touch-action: none;
+}
+
+/* パレット */
+.palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5vw;
+  padding: 2vw;
+  justify-content: center;
+}
+
+.palette button {
+  background: #eee;
+  border: 2px solid transparent;
+  padding: 1vw 2vw;
+  font-size: 3vw;
+  min-width: 40px;
+}
+
+.palette button.active {
+  background: gold;
+  border-color: red;
+}
+
+/* 盤 */
+#board {
+  --gap: 2vw;
+  width: 98%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(9, var(--cell));
+  gap: var(--gap);
+
+  padding: calc(var(--gap)/2);
+}
+
+/* タイル */
+.cell {
+  width: 100%;
+  aspect-ratio: 1;
+  background: #ddd;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: clamp(20px, 8vw, 48px);
+  font-weight: bold;
+  color: black;
+
+  line-height: 1;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 0;
+}
+
+/* ピンク（通常） */
+.highlight-layer {
+  position: absolute;
+  inset: 5%;
+  background: rgba(255, 105, 180, 0.5);
+  border-radius: 5px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 青（自） */
+.highlight-layer.blue {
+  background: rgba(0, 150, 255, 0.5);
+}
+
+/* ドロップ候補 */
+.cell.drag-target {
+  box-shadow: 0 0 10px cyan inset;
+  background: #ccf;
+}
+
+/* ゴースト */
+.drag-ghost {
+  position: fixed;
+  pointer-events: none;
+
+  width: 60px;
+  height: 60px;
+
+  background: #ddd;
+  border-radius: 6px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 30px;
+  font-weight: bold;
+
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+
+  box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+}
+
+/* PC */
+@media (min-width: 1200px) {
+  #board {
+    width: 500px;
+    --gap: 8px;
+    --cell: calc((500px - 7 * 8px) / 8);
+  }
+
+  .palette button {
+    font-size: 16px;
+    padding: 6px 10px;
+  }
+
+  .cell {
+    font-size: 30px;
+  }
+}
