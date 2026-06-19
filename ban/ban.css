@@ -1,6 +1,7 @@
 body {
   font-family: sans-serif;
   padding: 20px;
+  font-size: 16px;
 }
 
 h2 {
@@ -19,14 +20,14 @@ h2 {
 table {
   border-collapse: collapse;
   width: 100%;
-  table-layout: fixed; /* 均等幅 */
+  table-layout: fixed;
 }
 
 th, td {
   border: 1px solid #333;
   padding: 8px;
   text-align: center;
-  width: 20%; /* 5列均等 */
+  width: 20%;
 }
 
 th {
@@ -35,5 +36,34 @@ th {
 
 /* 宴会行 */
 .highlight {
-  background-color: #e6ffe6; /* 薄緑 */
+  background-color: #e6ffe6;
 }
+
+/* 1200px以下はスマホ扱い */
+@media screen and (max-width: 1200px) {
+
+  body {
+    font-size: 60px;
+  }
+
+  h2 {
+    font-size: 80px;
+  }
+
+  input {
+    font-size: 60px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  th, td {
+    font-size: 60px;
+    padding: 10px;
+  }
+  
+  .table-container {
+    max-width: 100%;
+  }
+
+}
+
