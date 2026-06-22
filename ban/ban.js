@@ -1,5 +1,22 @@
-const baseDate = new Date("2026-01-29");
+const baseDate = createJSTDate("2026-01-29");
 
+// JST日付生成（重要）
+function createJSTDate(dateStr) {
+  const date = new Date(dateStr + "T00:00:00+09:00");
+  return date;
+}
+
+// JSTの今日取得
+function getTodayJST() {
+  const now = new Date();
+
+  // UTCからJSTに変換
+  const jst = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+
+  return new Date(jst.getFullYear(), jst.getMonth(), jst.getDate());
+}
+
+// データ配列
 const data = [
 ["親密","後継","-"],
 ["宴会","酒坊","元宝"],
@@ -33,6 +50,7 @@ const data = [
 ["家来","商戦","-"]
 ];
 
+// 日付フォーマット M/D（JSTで扱う）
 function formatDate(date) {
   return `${date.getMonth() + 1}/${date.getDate()}`;
 }
@@ -42,12 +60,13 @@ function generateTable(todayStr) {
   tbody.innerHTML = "";
 
   const base = new Date(baseDate);
-  const today = new Date(todayStr);
+  const today = createJSTDate(todayStr);
 
   base.setHours(0,0,0,0);
   today.setHours(0,0,0,0);
 
   const diffDays = Math.floor((today - base) / 86400000);
+
   const A = Math.floor(diffDays / 3);
   const B = A % 30;
 
@@ -79,17 +98,27 @@ function generateTable(todayStr) {
     `;
 
     tbody.appendChild(row);
+
     currentDate.setDate(currentDate.getDate() + 3);
   }
 }
 
+// 初期設定（JST基準）
 const todayInput = document.getElementById("todayInput");
-const now = new Date();
+const nowJST = getTodayJST();
 
-todayInput.value = now.toISOString().split('T')[0];
+// yyyy-mm-dd形式
+const yyyy = nowJST.getFullYear();
+const mm = String(nowJST.getMonth() + 1).padStart(2, '0');
+const dd = String(nowJST.getDate()).padStart(2, '0');
 
+todayInput.value = `${yyyy}-${mm}-${dd}`;
+
+// 初回描画
 generateTable(todayInput.value);
 
+// 日付変更
 todayInput.addEventListener("change", () => {
   generateTable(todayInput.value);
 });
+``
