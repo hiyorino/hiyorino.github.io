@@ -11,7 +11,7 @@ function getTodayJST() {
   const now = new Date();
 
   // UTCからJSTに変換
-  const jst = new Date(now.getTime() + (9 * 60 * 60 * 1000));
+  const jst = new Date(now.getTime());
 
   return new Date(jst.getFullYear(), jst.getMonth(), jst.getDate());
 }
