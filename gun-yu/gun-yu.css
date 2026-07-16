@@ -16,12 +16,12 @@ body {
 /* ---------- レイアウト ---------- */
 
 .top-section {
-    height: 15vh;
+    height: 150px;
     padding: 10px;
 }
 
 .bottom-section {
-    height: 85vh;
+    height: calc(100vh - 150px);
     padding: 10px;
     overflow-y: auto;
     background-color: #fafafa;
@@ -38,7 +38,7 @@ body {
 }
 
 .day-table {
-    height: 410px;
+    height: 470px;
 }
 
 .day-block {
