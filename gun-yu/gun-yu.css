@@ -136,6 +136,10 @@ body {
     color: #008000;
 }
 
+.color-blue {
+    color: #0000FF;
+}
+
 /* 1200px以下はスマホ扱い */
 @media screen and (max-width: 1200px) {
 
