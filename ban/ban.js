@@ -121,6 +121,7 @@ function generateTable(todayStr) {
     let data = data1;
     
     const targetDate1 = new Date("2026-06-16T00:00:00+09:00"); // JST固定
+    const targetDate2 = new Date("2026-07-16T00:00:00+09:00"); // JST固定
     const today = new Date();
 
     // JSTで比較したい場合（おすすめ）
@@ -132,6 +133,9 @@ function generateTable(todayStr) {
 
     if (todayJST >= targetDate1) {
       data = data2;
+    }
+    if (todayJST >= targetDate2) {
+      data = data1;
     }
 
     if (data[index][0] === "宴会") {
