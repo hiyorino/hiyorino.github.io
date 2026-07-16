@@ -135,3 +135,16 @@ body {
 .color-green {
     color: #008000;
 }
+
+/* 1200px以下はスマホ扱い */
+@media screen and (max-width: 1200px) {
+
+  body {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 60px;
+  }
+
+}
