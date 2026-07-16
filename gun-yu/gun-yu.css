@@ -52,7 +52,7 @@ body {
 .day-title {
     margin: 0 0 8px;
     padding: 8px 12px;
-    font-size: 18px;
+    font-size: 25px;
     font-weight: bold;
     background-color: #f0f0f0;
     border-left: 5px solid #4a90e2;
@@ -93,35 +93,35 @@ body {
 /* ---------- カラム幅 ---------- */
 
 .col-match {
-    width: 50px;
+    width: 3em;
 }
 
 .col-server {
-    width: 60px;
+    width: 2.5em;
 }
 
 .col-guild {
-    width: 220px;
+    width: 8em;
 }
 
 .col-level {
-    width: 70px;
+    width: 3em;
 }
 
 .col-member {
-    width: 80px;
+    width: 4.5em;
 }
 
 .col-sales {
-    width: 110px;
+    width: 6.5em;
 }
 
 .col-diff {
-    width: 110px;
+    width: 6.5em;
 }
 
 .col-rank {
-    width: 80px;
+   width: 3em;
 }
 
 .color-red {
@@ -140,7 +140,7 @@ body {
 @media screen and (max-width: 1200px) {
 
   body {
-    font-size: 40px;
+    font-size: 25px;
   }
 
   h2 {
