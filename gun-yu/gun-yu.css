@@ -140,6 +140,10 @@ body {
     color: #0000FF;
 }
 
+.color-purple {
+    color: #FF00FF;
+}
+
 /* 1200px以下はスマホ扱い */
 @media screen and (max-width: 1200px) {
 
